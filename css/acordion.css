@@ -1,0 +1,54 @@
+
+.accordion{
+	transform: translateZ(0);
+}
+
+.accordion > .accordion-toggle{
+	position: absolute;
+	opacity: 0;
+	display: none;
+}
+
+.accordion > label{
+	position: relative;
+	display: block;
+	height: 50px;
+	line-height: 50px;
+	padding: 0 20px;
+	font-size: 16px;
+	font-weight: 700;
+	border-top: 1px solid #ddd;
+	background: #fff;
+	cursor: pointer;
+}
+
+.accordion > label:after {
+  content: '\f078';
+  position: absolute;
+  top: 0px;
+  right: 20px;
+  font-family: icomoon;
+  transform: rotate(90deg);
+  transition: .3s transform;
+}
+
+.accordion > section{
+	height: 0;
+	transition: .3s all;
+	overflow: hidden;
+}
+
+.accordion > .accordion-toggle:checked ~ label:after{
+ transform: rotate(0deg);
+}
+
+.accordion > .accordion-toggle:checked ~ section{
+  height: auto;
+}
+
+.accordion > section ul li{
+    font-size: 13px;
+    line-height: 1.5;
+    text-align: left;
+    padding: .5em 0;
+  }
